@@ -59,6 +59,8 @@ async def on_ready():  # When the bot is ready
     print(f"{bot.user} Started.")
 
 
+
+'''
 #Message respond event
 @bot.event
 async def on_message(message):
@@ -69,6 +71,7 @@ async def on_message(message):
     r = upsidedown_text(message.content)
     r = reverse_text(r)
     await message.reply(r, mention_author=False)
+'''
 
 
 #Reverse
@@ -105,6 +108,12 @@ async def full(ctx, *, arg):
 async def full_error(ctx, error):
     if isinstance(error, commands.BadArgument):
         await ctx.send("Error: Something went wrong.")
+
+@bot.command(name="emoji", help="")
+async def emoji(ctx, *, arg):
+    print(arg)
+    await ctx.reply(arg, mention_author=False)
+
 
 
 # boiler plate
